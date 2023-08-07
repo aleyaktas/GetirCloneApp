@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		A67E165E2A81962100031CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67E165D2A81962100031CB7 /* AppDelegate.swift */; };
 		A67E16602A81962100031CB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67E165F2A81962100031CB7 /* SceneDelegate.swift */; };
-		A67E16622A81962100031CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67E16612A81962100031CB7 /* ViewController.swift */; };
+		A67E16622A81962100031CB7 /* MainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67E16612A81962100031CB7 /* MainPageVC.swift */; };
 		A67E16652A81962100031CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67E16632A81962100031CB7 /* Main.storyboard */; };
 		A67E16672A81962300031CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67E16662A81962300031CB7 /* Assets.xcassets */; };
 		A67E166A2A81962300031CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67E16682A81962300031CB7 /* LaunchScreen.storyboard */; };
+		A67E16772A819F5F00031CB7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67E16762A819F5F00031CB7 /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A67E165A2A81962100031CB7 /* getirCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = getirCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67E165D2A81962100031CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A67E165F2A81962100031CB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A67E16612A81962100031CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A67E16612A81962100031CB7 /* MainPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageVC.swift; sourceTree = "<group>"; };
 		A67E16642A81962100031CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A67E16662A81962300031CB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A67E16692A81962300031CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A67E166B2A81962300031CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A67E16762A819F5F00031CB7 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,24 @@
 		A67E165C2A81962100031CB7 /* getirCloneApp */ = {
 			isa = PBXGroup;
 			children = (
+				A67E16712A81968200031CB7 /* Main Page */,
 				A67E165D2A81962100031CB7 /* AppDelegate.swift */,
 				A67E165F2A81962100031CB7 /* SceneDelegate.swift */,
-				A67E16612A81962100031CB7 /* ViewController.swift */,
-				A67E16632A81962100031CB7 /* Main.storyboard */,
 				A67E16662A81962300031CB7 /* Assets.xcassets */,
 				A67E16682A81962300031CB7 /* LaunchScreen.storyboard */,
 				A67E166B2A81962300031CB7 /* Info.plist */,
 			);
 			path = getirCloneApp;
+			sourceTree = "<group>";
+		};
+		A67E16712A81968200031CB7 /* Main Page */ = {
+			isa = PBXGroup;
+			children = (
+				A67E16612A81962100031CB7 /* MainPageVC.swift */,
+				A67E16632A81962100031CB7 /* Main.storyboard */,
+				A67E16762A819F5F00031CB7 /* CustomTabBar.swift */,
+			);
+			path = "Main Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A67E16622A81962100031CB7 /* ViewController.swift in Sources */,
+				A67E16772A819F5F00031CB7 /* CustomTabBar.swift in Sources */,
+				A67E16622A81962100031CB7 /* MainPageVC.swift in Sources */,
 				A67E165E2A81962100031CB7 /* AppDelegate.swift in Sources */,
 				A67E16602A81962100031CB7 /* SceneDelegate.swift in Sources */,
 			);
