@@ -15,15 +15,37 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EJ-fN-CLY">
+                                <rect key="frame" x="142" y="415.66666666666669" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kAg-Tx-wWa">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="LcZ-rl-OPZ"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kAg-Tx-wWa" secondAttribute="trailing" id="4U0-51-XCK"/>
+                            <constraint firstItem="kAg-Tx-wWa" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Dtg-lX-dDN"/>
+                            <constraint firstItem="9EJ-fN-CLY" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xRt-8y-Vgd"/>
+                            <constraint firstItem="kAg-Tx-wWa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ycT-5V-3DF"/>
+                            <constraint firstItem="9EJ-fN-CLY" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="zWp-Uu-uh6"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="search" selectedImage="search_selected" id="8hs-pq-tqS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="-2"/>
+            <point key="canvasLocation" x="116.79389312977099" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
