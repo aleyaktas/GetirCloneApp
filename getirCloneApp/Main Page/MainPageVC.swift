@@ -18,8 +18,16 @@ class MainPageVC: UIViewController {
         setupNavigationBar()
         setupTabBar()
         editAdressStyle()
+        customNibs()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
+    func customNibs() {
+        let sliderCellNib: UINib = UINib(nibName: "SliderTableView", bundle: nil)
+        tableView.register(sliderCellNib, forCellReuseIdentifier: "SliderTableViewCell")
+    }
       
     func changeColor(itemApperance: UITabBarItemAppearance) {
         itemApperance.selected.iconColor = UIColor(named: "purple")
@@ -74,15 +82,22 @@ class MainPageVC: UIViewController {
             addressButtonLabel.setAttributedTitle(attributedText, for: .normal)
         }
     }
+    
 }
 
 extension MainPageVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "SliderTableViewCell", for: indexPath) as? SliderTableViewCell {
+            return cell
+        }
+        return UITableViewCell()
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
     
     

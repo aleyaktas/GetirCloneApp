@@ -10,14 +10,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SliderTableViewCell" customModule="getirCloneApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+        <view contentMode="scaleToFill" restorationIdentifier="SliderTableViewCell" id="iN0-l3-epB" customClass="SliderTableViewCell" customModule="getirCloneApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="800" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="c0G-yQ-UaO">
-                    <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                    <rect key="frame" x="0.0" y="0.0" width="800" height="400"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yJ9-lG-d4c">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yJ9-lG-d4c">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
