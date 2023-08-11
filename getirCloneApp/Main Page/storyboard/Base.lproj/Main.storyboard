@@ -16,10 +16,50 @@
                     <view key="view" contentMode="scaleToFill" id="uFM-op-pub">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8e-sQ-TQ0">
+                                <rect key="frame" x="0.0" y="103" width="393" height="28"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dX-Gy-NIj">
+                                        <rect key="frame" x="0.0" y="0.0" width="327.66666666666669" height="28"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaN-Q0-qkz">
+                                        <rect key="frame" x="327.66666666666669" y="0.0" width="65.333333333333314" height="28"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="yellow"/>
+                                <constraints>
+                                    <constraint firstItem="OaN-Q0-qkz" firstAttribute="width" secondItem="7dX-Gy-NIj" secondAttribute="width" multiplier="0.2" id="axq-Iu-718"/>
+                                    <constraint firstAttribute="bottom" secondItem="OaN-Q0-qkz" secondAttribute="bottom" id="gTp-T9-ya9"/>
+                                    <constraint firstItem="OaN-Q0-qkz" firstAttribute="top" secondItem="J8e-sQ-TQ0" secondAttribute="top" id="z8I-dQ-6r7"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ukX-Of-Hqz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ukX-Of-Hqz" firstAttribute="trailing" secondItem="J8e-sQ-TQ0" secondAttribute="trailing" id="Hpd-rP-7FV"/>
+                            <constraint firstItem="J8e-sQ-TQ0" firstAttribute="leading" secondItem="ukX-Of-Hqz" secondAttribute="leading" id="MZg-bb-cJF"/>
+                            <constraint firstItem="J8e-sQ-TQ0" firstAttribute="top" secondItem="ukX-Of-Hqz" secondAttribute="top" id="kkj-Ia-4Kc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XMi-jB-RHG"/>
+                    <connections>
+                        <outlet property="addressButtonLabel" destination="7dX-Gy-NIj" id="lRB-0f-TI3"/>
+                        <outlet property="timeLabel" destination="OaN-Q0-qkz" id="oHf-57-Z1g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egq-Fh-Rpx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,6 +158,9 @@
         <image name="home_selected" width="24" height="24"/>
         <namedColor name="purple">
             <color red="0.36100000143051147" green="0.24300000071525574" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="yellow">
+            <color red="1" green="0.82700002193450928" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
