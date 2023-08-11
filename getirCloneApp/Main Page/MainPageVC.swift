@@ -11,6 +11,7 @@ class MainPageVC: UIViewController {
 
     @IBOutlet weak var addressButtonLabel: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,6 @@ class MainPageVC: UIViewController {
         setupTabBar()
         editAdressStyle()
     }
-    
     
       
     func changeColor(itemApperance: UITabBarItemAppearance) {
@@ -74,6 +74,18 @@ class MainPageVC: UIViewController {
             addressButtonLabel.setAttributedTitle(attributedText, for: .normal)
         }
     }
+}
+
+extension MainPageVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
+    
+    
 }
 
 

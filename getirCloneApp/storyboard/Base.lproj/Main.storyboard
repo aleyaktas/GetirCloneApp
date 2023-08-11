@@ -46,18 +46,27 @@
                                     <constraint firstItem="OaN-Q0-qkz" firstAttribute="top" secondItem="J8e-sQ-TQ0" secondAttribute="top" id="z8I-dQ-6r7"/>
                                 </constraints>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mnl-86-bEM">
+                                <rect key="frame" x="0.0" y="131" width="393" height="638"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ukX-Of-Hqz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Mnl-86-bEM" firstAttribute="leading" secondItem="ukX-Of-Hqz" secondAttribute="leading" id="11l-XZ-vC5"/>
                             <constraint firstItem="ukX-Of-Hqz" firstAttribute="trailing" secondItem="J8e-sQ-TQ0" secondAttribute="trailing" id="Hpd-rP-7FV"/>
                             <constraint firstItem="J8e-sQ-TQ0" firstAttribute="leading" secondItem="ukX-Of-Hqz" secondAttribute="leading" id="MZg-bb-cJF"/>
+                            <constraint firstItem="Mnl-86-bEM" firstAttribute="top" secondItem="J8e-sQ-TQ0" secondAttribute="bottom" id="dwi-s7-20m"/>
                             <constraint firstItem="J8e-sQ-TQ0" firstAttribute="top" secondItem="ukX-Of-Hqz" secondAttribute="top" id="kkj-Ia-4Kc"/>
+                            <constraint firstItem="ukX-Of-Hqz" firstAttribute="bottom" secondItem="Mnl-86-bEM" secondAttribute="bottom" id="uD0-cp-lmu"/>
+                            <constraint firstItem="ukX-Of-Hqz" firstAttribute="trailing" secondItem="Mnl-86-bEM" secondAttribute="trailing" id="ydL-oi-cRQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XMi-jB-RHG"/>
                     <connections>
                         <outlet property="addressButtonLabel" destination="7dX-Gy-NIj" id="lRB-0f-TI3"/>
+                        <outlet property="tableView" destination="Mnl-86-bEM" id="9Sv-X0-QAA"/>
                         <outlet property="timeLabel" destination="OaN-Q0-qkz" id="oHf-57-Z1g"/>
                     </connections>
                 </viewController>
