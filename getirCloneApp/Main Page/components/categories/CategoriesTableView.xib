@@ -10,14 +10,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="SliderTableViewCell" id="iN0-l3-epB" customClass="SliderTableViewCell" customModule="getirCloneApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="800" height="400"/>
+        <view contentMode="scaleToFill" restorationIdentifier="CategoriesTableViewCell" id="iN0-l3-epB" customClass="CategoriesTableViewCell" customModule="getirCloneApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="800" height="800"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="c0G-yQ-UaO">
-                    <rect key="frame" x="0.0" y="0.0" width="800" height="400"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jdQ-zq-7yK">
+                    <rect key="frame" x="0.0" y="0.0" width="800" height="800"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yJ9-lG-d4c">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g2f-0X-dSv">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -28,16 +28,16 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="c0G-yQ-UaO" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="0Xe-po-cTL"/>
-                <constraint firstAttribute="bottom" secondItem="c0G-yQ-UaO" secondAttribute="bottom" id="Bfl-uR-AXg"/>
-                <constraint firstItem="c0G-yQ-UaO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YUS-fb-L5f"/>
-                <constraint firstItem="c0G-yQ-UaO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zCj-9x-ArV"/>
+                <constraint firstItem="jdQ-zq-7yK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Mah-xs-mEk"/>
+                <constraint firstAttribute="bottom" secondItem="jdQ-zq-7yK" secondAttribute="bottom" id="aLN-v9-9Xg"/>
+                <constraint firstItem="jdQ-zq-7yK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xaH-jl-kae"/>
+                <constraint firstItem="jdQ-zq-7yK" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ySI-s9-018"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="collectionView" destination="c0G-yQ-UaO" id="oYY-C1-pWb"/>
+                <outlet property="collectionView" destination="jdQ-zq-7yK" id="M9r-tq-OGm"/>
             </connections>
-            <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
+            <point key="canvasLocation" x="4.5801526717557248" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>

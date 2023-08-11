@@ -20,6 +20,8 @@ class MainPageVC: UIViewController {
         editAdressStyle()
         customNibs()
         
+        tableView.backgroundColor = UIColor.lightGray
+        
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -27,6 +29,8 @@ class MainPageVC: UIViewController {
     func customNibs() {
         let sliderCellNib: UINib = UINib(nibName: "SliderTableView", bundle: nil)
         tableView.register(sliderCellNib, forCellReuseIdentifier: "SliderTableViewCell")
+        let categoryCellNib: UINib = UINib(nibName: "CategoriesTableView", bundle: nil)
+        tableView.register(categoryCellNib, forCellReuseIdentifier: "CategoriesTableViewCell")
     }
       
     func changeColor(itemApperance: UITabBarItemAppearance) {
@@ -91,16 +95,27 @@ extension MainPageVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "SliderTableViewCell", for: indexPath) as? SliderTableViewCell {
-            return cell
+      
+        if indexPath.section == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "SliderTableViewCell", for: indexPath) as? SliderTableViewCell {
+                return cell
+            }
+        }else if indexPath.section == 1 {
+            if let cell2 = tableView.dequeueReusableCell(withIdentifier: "CategoriesTableViewCell", for: indexPath) as? CategoriesTableViewCell {
+                return cell2
+            }
         }
         return UITableViewCell()
+
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        if indexPath.section == 0 {
+            return 200
+        }
+        return self.tableView.frame.size.height - 200
     }
-    
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
 }
-
-

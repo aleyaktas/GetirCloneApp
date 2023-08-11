@@ -21,8 +21,6 @@ class SliderTableViewCell: UITableViewCell {
 
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        
     }
     
     func configureCollectionViewLayout() {
@@ -30,8 +28,8 @@ class SliderTableViewCell: UITableViewCell {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.scrollDirection = .horizontal
         let screenWidth = UIScreen.main.bounds.width
-        let itemWidth = (screenWidth)
-        layout.itemSize = CGSize(width: itemWidth , height: 400)
+        let screenHeight = collectionView.frame.size.height
+        layout.itemSize = CGSizeMake(screenWidth, screenHeight);
         collectionView.collectionViewLayout = layout
     }
 
@@ -39,12 +37,12 @@ class SliderTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func customNibs() {
+    private func customNibs() {
         let sliderCollectionCellNib: UINib = UINib(nibName: "SliderCollectionView", bundle: nil)
         collectionView.register(sliderCollectionCellNib, forCellWithReuseIdentifier: "SliderCollectionViewCell")
     }
     
-    func addData() {
+    private func addData() {
         let s1 = Slider(image_id: 1, image_name: "slider1")
         let s2 = Slider(image_id: 2, image_name: "slider2")
         let s3 = Slider(image_id: 3, image_name: "slider3")
@@ -79,9 +77,8 @@ extension SliderTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
                cell.imageView.image = UIImage(named: slider.image_name!)
                return cell
         }
-                return UICollectionViewCell()
-
+        return UICollectionViewCell()
     }
     
-    
 }
+
