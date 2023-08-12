@@ -4,7 +4,7 @@ UP School & Akbank IOS Bootcamp Homework-6
 
 ## Description
 
-This project contains a cloned version of the interface of the Getir app.
+This project includes a single page cloned version of the Getir application interface.
 
 ## Application Images
 
