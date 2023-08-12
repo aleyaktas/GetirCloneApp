@@ -67,6 +67,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A60459C62A87EBE800C86A53 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A67E165D2A81962100031CB7 /* AppDelegate.swift */,
+				A67E165F2A81962100031CB7 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A60459C72A87EBF700C86A53 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A67E16662A81962300031CB7 /* Assets.xcassets */,
+				A67E16682A81962300031CB7 /* LaunchScreen.storyboard */,
+				A67E166B2A81962300031CB7 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A64816912A8654120028A8C2 /* components */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,14 +162,11 @@
 		A67E165C2A81962100031CB7 /* getirCloneApp */ = {
 			isa = PBXGroup;
 			children = (
+				A60459C62A87EBE800C86A53 /* Application */,
 				A64816932A8654950028A8C2 /* data */,
 				A6DA31AB2A84F9F0004B24AD /* storyboard */,
 				A67E16712A81968200031CB7 /* Main Page */,
-				A67E165D2A81962100031CB7 /* AppDelegate.swift */,
-				A67E165F2A81962100031CB7 /* SceneDelegate.swift */,
-				A67E16662A81962300031CB7 /* Assets.xcassets */,
-				A67E16682A81962300031CB7 /* LaunchScreen.storyboard */,
-				A67E166B2A81962300031CB7 /* Info.plist */,
+				A60459C72A87EBF700C86A53 /* Resources */,
 			);
 			path = getirCloneApp;
 			sourceTree = "<group>";
@@ -412,7 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = getirCloneApp/Info.plist;
+				INFOPLIST_FILE = getirCloneApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -439,7 +455,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = getirCloneApp/Info.plist;
+				INFOPLIST_FILE = getirCloneApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
