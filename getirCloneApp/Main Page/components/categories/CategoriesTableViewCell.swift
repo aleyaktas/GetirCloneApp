@@ -33,17 +33,17 @@ class CategoriesTableViewCell: UITableViewCell {
     
     func configureCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 5 
-        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 10  // Öğeler arası yatay boşluk
+        layout.minimumLineSpacing = 10       // Öğeler arası dikey boşluk
 
         let screenWidth = UIScreen.main.bounds.width
         let itemWidth = (screenWidth - 15 * 5) / 4
 
-        layout.itemSize = CGSize(width: itemWidth, height: itemWidth * 1.25)
+        layout.itemSize = CGSize(width: itemWidth, height: itemWidth * 1.4)
         layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         collectionView.collectionViewLayout = layout
         collectionView.isPagingEnabled = true
-        
+
     }
 
     

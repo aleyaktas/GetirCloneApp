@@ -20,9 +20,18 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     private func configureStyle() {
         categoryImage.backgroundColor = .white
         categoryImage.layer.cornerRadius = 14
-        categoryImage.layer.masksToBounds = false
-        categoryImage.layer.shadowColor = UIColor.lightGray.cgColor
-        categoryImage.layer.shadowOpacity = 0.2
-        categoryImage.layer.shadowRadius = 4
+
+        let shadowLayer = CALayer()
+        shadowLayer.frame = categoryImage.frame
+        shadowLayer.cornerRadius = categoryImage.layer.cornerRadius
+        shadowLayer.backgroundColor = UIColor.white.cgColor
+        shadowLayer.shadowColor = UIColor.black.cgColor
+        shadowLayer.shadowOpacity = 0.2
+        shadowLayer.shadowRadius = 8
+        shadowLayer.shadowOffset = CGSize(width: 0, height: 6)
+
+        categoryImage.superview?.layer.insertSublayer(shadowLayer, below: categoryImage.layer)
+
+
     }
 }
