@@ -21,6 +21,30 @@ class SliderTableViewCell: UITableViewCell {
 
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        startAutoScrolling()
+
+    }
+    
+    private func startAutoScrolling() {
+        let itemCount = sliderDataList.count
+        
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { [weak self] timer in
+            guard let self = self else {
+                timer.invalidate()
+                return
+            }
+            
+            guard let currentIndexPath = self.collectionView.indexPathsForVisibleItems.first else { return }
+            
+            var nextItem = currentIndexPath.item + 1
+            if nextItem >= itemCount {
+                nextItem = 0
+            }
+            
+            let nextIndexPath = IndexPath(item: nextItem, section: 0)
+            self.collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+        }
     }
     
     func configureCollectionViewLayout() {
@@ -43,25 +67,23 @@ class SliderTableViewCell: UITableViewCell {
     }
     
     private func addData() {
-        let s1 = Slider(image_id: 1, image_name: "slider1")
-        let s2 = Slider(image_id: 2, image_name: "slider2")
-        let s3 = Slider(image_id: 3, image_name: "slider3")
-        let s4 = Slider(image_id: 4, image_name: "slider4")
-        let s5 = Slider(image_id: 5, image_name: "slider5")
-        let s6 = Slider(image_id: 6, image_name: "slider6")
-        let s7 = Slider(image_id: 7, image_name: "slider7")
-        let s8 = Slider(image_id: 8, image_name: "slider8")
-        let s9 = Slider(image_id: 9, image_name: "slider9")
+        let sliderData = [
+            "slider1",
+            "slider2",
+            "slider3",
+            "slider4",
+            "slider5",
+            "slider6",
+            "slider7",
+            "slider8",
+            "slider9"
+        ]
+        
+        for imageName in sliderData {
+            let s1 = Slider(image_id: sliderDataList.count + 1, image_name: imageName)
+            sliderDataList.append(s1)
+        }
 
-        sliderDataList.append(s1)
-        sliderDataList.append(s2)
-        sliderDataList.append(s3)
-        sliderDataList.append(s4)
-        sliderDataList.append(s5)
-        sliderDataList.append(s6)
-        sliderDataList.append(s7)
-        sliderDataList.append(s8)
-        sliderDataList.append(s9)
     }
 }
 

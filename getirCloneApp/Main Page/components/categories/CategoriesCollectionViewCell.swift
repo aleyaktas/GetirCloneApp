@@ -16,10 +16,11 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         categoryImage.backgroundColor = .white
-        categoryImage.layer.cornerRadius = 10
+        categoryImage.layer.cornerRadius = 14
         categoryImage.layer.masksToBounds = false
-        categoryImage.layer.shadowColor = UIColor.black.cgColor
+        categoryImage.layer.shadowColor = UIColor.lightGray.cgColor
         categoryImage.layer.shadowOpacity = 0.2
         categoryImage.layer.shadowRadius = 4
+        
     }
 }
