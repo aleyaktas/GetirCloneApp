@@ -33,8 +33,8 @@ class CategoriesTableViewCell: UITableViewCell {
     
     func configureCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 10  // Öğeler arası yatay boşluk
-        layout.minimumLineSpacing = 10       // Öğeler arası dikey boşluk
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
 
         let screenWidth = UIScreen.main.bounds.width
         let itemWidth = (screenWidth - 15 * 5) / 4
@@ -46,7 +46,6 @@ class CategoriesTableViewCell: UITableViewCell {
 
     }
 
-    
     
     private func customNibs() {
         let categoryCollectionCellNib: UINib = UINib(nibName: "CategoriesCollectionView", bundle: nil)
