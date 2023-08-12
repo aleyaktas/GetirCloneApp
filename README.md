@@ -10,9 +10,10 @@ This project includes a single page cloned version of the Getir application inte
 
 
 <div style="display: flex; flex-direction: row;">
-  <img width="300" alt="splash" src="https://github.com/aleyaktas/getirCloneApp/assets/76265779/4a3d6591-6376-4a19-ba25-b4e2362bf6c8">
-  <img width="300" alt="home" src="https://github.com/aleyaktas/getirCloneApp/assets/76265779/d71a6ded-6fa0-4b44-81f2-d3b825ced2fb">
+  <img width="300" alt="splash" src="https://github.com/aleyaktas/GetirCloneApp/assets/76265779/0b876a03-f974-429b-892e-96a73676592f">
+  <img width="300" alt="home" src="https://github.com/aleyaktas/GetirCloneApp/assets/76265779/34fca5a8-fa6e-43ed-9e87-7450536e777f">
 </div>
+
 
 
 ## Features
