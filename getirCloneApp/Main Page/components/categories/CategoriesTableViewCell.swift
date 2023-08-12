@@ -15,15 +15,10 @@ class CategoriesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureData()
         customNibs()
         addData()
         configureCollectionViewLayout()
-        
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
-
     }
     
 
@@ -31,6 +26,10 @@ class CategoriesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    private func configureData() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
     
     func configureCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()

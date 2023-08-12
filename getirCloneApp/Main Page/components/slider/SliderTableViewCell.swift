@@ -10,42 +10,28 @@ import UIKit
 class SliderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    private var autoScrollTimer: Timer?
     
     var sliderDataList = [Slider]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureData()
+        configureCollectionViewLayout()
         customNibs()
         addData()
-        configureCollectionViewLayout()
-
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
         startAutoScrolling()
-
     }
     
-    private func startAutoScrolling() {
-        let itemCount = sliderDataList.count
-        
-        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { [weak self] timer in
-            guard let self = self else {
-                timer.invalidate()
-                return
-            }
-            
-            guard let currentIndexPath = self.collectionView.indexPathsForVisibleItems.first else { return }
-            
-            var nextItem = currentIndexPath.item + 1
-            if nextItem >= itemCount {
-                nextItem = 0
-            }
-            
-            let nextIndexPath = IndexPath(item: nextItem, section: 0)
-            self.collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
-        }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
+    
+    private func configureData() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
     
     func configureCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
@@ -55,10 +41,6 @@ class SliderTableViewCell: UITableViewCell {
         let screenHeight = collectionView.frame.size.height
         layout.itemSize = CGSizeMake(screenWidth, screenHeight);
         collectionView.collectionViewLayout = layout
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
     private func customNibs() {
@@ -83,13 +65,39 @@ class SliderTableViewCell: UITableViewCell {
             let s1 = Slider(image_id: sliderDataList.count + 1, image_name: imageName)
             sliderDataList.append(s1)
         }
+    }
+    
+    private func startAutoScrolling() {
+        autoScrollTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { [weak self] timer in
+            guard let self = self else {
+                timer.invalidate()
+                return
+            }
 
+            guard let currentIndexPath = self.collectionView.indexPathsForVisibleItems.first else { return }
+
+            var nextItem = currentIndexPath.item + 1
+            let itemCount = self.sliderDataList.count
+
+            if nextItem >= itemCount {
+                nextItem = 0
+                let firstIndexPath = IndexPath(item: nextItem, section: 0)
+                self.collectionView.scrollToItem(at: firstIndexPath, at: .centeredHorizontally, animated: false)
+            } else {
+                let nextIndexPath = IndexPath(item: nextItem, section: 0)
+                self.collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+            }
+        }
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        autoScrollTimer?.invalidate()
     }
 }
 
 extension SliderTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(sliderDataList.count)
         return sliderDataList.count
     }
     

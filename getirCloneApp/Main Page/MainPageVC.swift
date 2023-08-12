@@ -9,19 +9,21 @@ import UIKit
 
 class MainPageVC: UIViewController {
 
-    @IBOutlet weak var addressButtonLabel: UIButton!
+    
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureData()
         setupNavigationBar()
         setupTabBar()
-        editAdressStyle()
+        editAddressStyle()
         customNibs()
-        
-        tableView.backgroundColor = UIColor.lightGray
-        
+    }
+    
+    private func configureData() {
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -39,12 +41,9 @@ class MainPageVC: UIViewController {
     
     private func setupNavigationBar() {
         navigationItem.title = ""
-
         let imageView = UIImageView(image: UIImage(named: "logo"))
         imageView.contentMode = .scaleAspectFit
-
         navigationItem.titleView = imageView
-
         let imageSize = CGSize(width: 70, height: 70)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.widthAnchor.constraint(equalToConstant: imageSize.width).isActive = true
@@ -64,8 +63,10 @@ class MainPageVC: UIViewController {
         tabBarController?.tabBar.scrollEdgeAppearance = apperance
     }
     
-    private func editAdressStyle() {
-        let fullAddress = "Ev, Atatürk, 1938.Sk, no: 14, Merkez/Ankara"
+    private func editAddressStyle() {
+        var fullAddress = "Ev, Atatürk, 1938.Sk, no: 14, Merkez/Ankara"
+        let padding = String(repeating: " ", count: 3)
+        fullAddress = padding + fullAddress
          
         if let commaRange = fullAddress.range(of: ",") {
             let firstPart = String(fullAddress[..<commaRange.lowerBound])
@@ -83,10 +84,9 @@ class MainPageVC: UIViewController {
             attributedText.addAttribute(.font, value: UIFont.systemFont(ofSize: 12), range: NSRange(location: 0, length: attributedText.length))
             attributedText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 16), range: rangeOfFirstPart)
             
-            addressButtonLabel.setAttributedTitle(attributedText, for: .normal)
+            addressLabel.attributedText = attributedText
         }
     }
-    
 }
 
 extension MainPageVC: UITableViewDelegate, UITableViewDataSource {
